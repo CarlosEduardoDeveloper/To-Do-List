@@ -52,6 +52,7 @@ public class TaskController {
             if (existingTask.isPresent()) {
                 Task taskToUpdate = existingTask.get();
                 taskToUpdate.setDescription(task.getDescription());
+                taskToUpdate.setCategory(task.getCategory());
                 taskToUpdate.setCompleted(task.isCompleted());
 
                 Task savedTask = taskService.saveTask(taskToUpdate);
